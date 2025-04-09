@@ -9,8 +9,6 @@ A Next.js application for generating and managing QR codes with analytics tracki
 - QR code generation with customizable parameters
 - Support for mobile app deep links (iOS and Android)
 - Analytics tracking for QR code scans
-- Ambassador management system
-- Payment processing with Stripe
 - Responsive dashboard interface
 
 ### Prerequisites
@@ -78,9 +76,6 @@ npm run build
 
 - Génération de codes QR avec paramètres personnalisables
 - Prise en charge des liens profonds pour applications mobiles (iOS et Android)
-- Suivi analytique des scans de codes QR
-- Système de gestion des ambassadeurs
-- Traitement des paiements avec Stripe
 - Interface de tableau de bord responsive
 
 ### Prérequis
