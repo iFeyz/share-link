@@ -1,0 +1,83 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model QRCode {
+  id                String     @id @default(cuid())
+  name              String
+  targetUrl         String
+  proxyUrl          String     @unique
+  createdAt         DateTime   @default(now())
+  updatedAt         DateTime   @updatedAt
+  isActive          Boolean    @default(true)
+  isMobileApp       Boolean    @default(false)
+  iosAppUrl         String?
+  androidAppUrl     String?
+  iosDeeplink       String?
+  androidDeeplink   String?
+  universalDeeplink String?
+  isSubscriptionOffer Boolean  @default(false)
+  subscriptionWebUrl String?
+  analytics         Analytics[]
+  ambassador        Ambassador? @relation(fields: [ambassadorId], references: [id])
+  ambassadorId      String?
+  purchases         Purchase[]
+}
+
+model Analytics {
+  id            String   @id @default(cuid())
+  qrCode        QRCode   @relation(fields: [qrCodeId], references: [id])
+  qrCodeId      String
+  visitCount    Int      @default(0)
+  uniqueVisitors Int     @default(0)
+  lastVisited   DateTime @default(now())
+  referrer      String?
+  userAgent     String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([qrCodeId])
+}
+
+model Ambassador {
+  id            String   @id @default(cuid())
+  name          String
+  email         String   @unique
+  phoneNumber   String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  qrCodes       QRCode[]
+  purchases     Purchase[]
+}
+
+model Purchase {
+  id            String   @id @default(cuid())
+  amount        Float
+  currency      String   @default("EUR")
+  status        String   @default("pending") // pending, completed, failed
+  customerEmail String
+  customerName  String?
+  stripeSessionId String @unique
+  wayfeUserId   String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  qrCode        QRCode   @relation(fields: [qrCodeId], references: [id])
+  qrCodeId      String
+  ambassador    Ambassador @relation(fields: [ambassadorId], references: [id])
+  ambassadorId  String
+
+  @@index([qrCodeId])
+  @@index([ambassadorId])
+}
