@@ -21,14 +21,14 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen items-center justify-center">
       <motion.header 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="border-b py-4"
       >
-        <div className="container flex justify-between items-center">
+        <div className="container flex justify-between gap-4 pt-4">
           <motion.h1 
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400 }}

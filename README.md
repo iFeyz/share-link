@@ -1,37 +1,141 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# QR Code Generator
 
-## Getting Started
+A Next.js application for generating and managing QR codes with analytics tracking. Built with Next.js, Prisma, PostgreSQL, and Stripe integration.
 
-First, run the development server:
+## 🇬🇧 English
+
+### Features
+
+- QR code generation with customizable parameters
+- Support for mobile app deep links (iOS and Android)
+- Analytics tracking for QR code scans
+- Ambassador management system
+- Payment processing with Stripe
+- Responsive dashboard interface
+
+### Prerequisites
+
+- Node.js (v18 or newer)
+- PostgreSQL database
+- Stripe account (for payment processing)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/YourUsername/qr-code-generator.git
+   cd qr-code-generator
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Create your environment variables file:
+   ```bash
+   cp .env.exemple .env.local
+   ```
+
+4. Update the `.env.local` file with your configuration:
+   ```
+   NEXT_PUBLIC_APP_URL="http://localhost:3000" # Or your deployment URL
+   DATABASE_URL="postgresql://username:password@localhost:5432/qrcode_db"
+   # Add other required environment variables
+   ```
+
+5. Setup the database:
+   ```bash
+   npx prisma db push
+   npx prisma generate
+   ```
+
+6. Seed the database (optional):
+   ```bash
+   npm run seed
+   ```
+
+7. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+8. Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
+
+### Deployment
+
+This application can be deployed on Vercel, Netlify, or any other Next.js compatible hosting service.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🇫🇷 Français
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Fonctionnalités
 
-## Learn More
+- Génération de codes QR avec paramètres personnalisables
+- Prise en charge des liens profonds pour applications mobiles (iOS et Android)
+- Suivi analytique des scans de codes QR
+- Système de gestion des ambassadeurs
+- Traitement des paiements avec Stripe
+- Interface de tableau de bord responsive
 
-To learn more about Next.js, take a look at the following resources:
+### Prérequis
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Node.js (v18 ou plus récent)
+- Base de données PostgreSQL
+- Compte Stripe (pour le traitement des paiements)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Installation
 
-## Deploy on Vercel
+1. Clonez le dépôt:
+   ```bash
+   git clone https://github.com/VotreNomUtilisateur/qr-code-generator.git
+   cd qr-code-generator
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Installez les dépendances:
+   ```bash
+   npm install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# share-link-wayfe
+3. Créez votre fichier de variables d'environnement:
+   ```bash
+   cp .env.exemple .env.local
+   ```
+
+4. Mettez à jour le fichier `.env.local` avec votre configuration:
+   ```
+   NEXT_PUBLIC_APP_URL="http://localhost:3000" # Ou votre URL de déploiement
+   DATABASE_URL="postgresql://utilisateur:motdepasse@localhost:5432/qrcode_db"
+   # Ajoutez d'autres variables d'environnement requises
+   ```
+
+5. Configurez la base de données:
+   ```bash
+   npx prisma db push
+   npx prisma generate
+   ```
+
+6. Alimentez la base de données (optionnel):
+   ```bash
+   npm run seed
+   ```
+
+7. Démarrez le serveur de développement:
+   ```bash
+   npm run dev
+   ```
+
+8. Ouvrez [http://localhost:3000](http://localhost:3000) avec votre navigateur pour voir l'application.
+
+### Déploiement
+
+Cette application peut être déployée sur Vercel, Netlify, ou tout autre service d'hébergement compatible avec Next.js.
+
+```bash
+npm run build
+```

@@ -34,17 +34,7 @@ export default async function AdminPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 w-full">
 
           
-          <Link href="/admin/ambassadors" className="block">
-            <div className="bg-card rounded-lg border shadow-sm p-6 h-full hover:border-primary transition-colors">
-              <div className="flex items-center mb-4">
-                <Users className="h-8 w-8 mr-3 text-primary" />
-                <h2 className="text-2xl font-bold">Ambassador Management</h2>
-              </div>
-              <p className="text-muted-foreground">
-                Manage ambassadors and track referrals through their unique QR codes.
-              </p>
-            </div>
-          </Link>
+
         </div>
         
         <div className="flex md:justify-around justify-center items-center mb-8 md:flex-row  flex-col gap-4 w-full">
