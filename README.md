@@ -21,7 +21,7 @@ A Next.js application for generating and managing QR codes with analytics tracki
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YourUsername/qr-code-generator.git
+   git clone https://github.com/iFeyz/share-link.git
    cd qr-code-generator
    ```
 
@@ -88,7 +88,7 @@ npm run build
 
 1. Clonez le dépôt:
    ```bash
-   git clone https://github.com/VotreNomUtilisateur/qr-code-generator.git
+   git clone https://github.com/iFeyz/share-link.git
    cd qr-code-generator
    ```
 
