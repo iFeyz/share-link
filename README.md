@@ -2,6 +2,8 @@
 
 A Next.js application for generating and managing QR codes with analytics tracking. Built with Next.js, Prisma, PostgreSQL, and Stripe integration.
 
+![QR Code Generator Demo](./img/gif.gif)
+
 ## 🇬🇧 English
 
 ### Features
